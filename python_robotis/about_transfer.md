@@ -12,10 +12,42 @@ XML-RPC란, RPC 프로토콜의 일종으로서, 인코딩 형식에서는 XML�
 호스트 : 응용프로그램을 수행하는 주체
 라우터 : 호스트에서 생성된 데이터를 여러 네트워크를 거쳐 전홍함. 서로 다른 네트워크에 속한 호스트간의 데이터 교환할 수 있게 해주는 장비.
 
+UDP???
+
 * IP address
+IP는 사실, 32자리로 이루어진 2진수. xxx.xxx.xxx.xxx
+IP주소의 사용이유는 각각의 Host들을 구분하기위해 사용된다.
+
 	- 내부 ip주소 : 공유기로 부터 할당받은 IP address
 	- 공인 ip주소 : 인터넷을 되게 해주는 실제 IP address
 
+	ip에는 여러가지 class가 존재한다. 컴퓨터에는 각자 ip가 할당되어 있다. 이 아이피는 유동적으로 변한다. DHCP(dynamic host configuration protocol) Server를 이용해서 전원이 켜져 있는 컴퓨터에만 IP를 할당하고, 꺼지면 회수한다.<br>
+한 컴퓨터에 여러 개의 NIC(Network Interface Card / 흔히 랜카드라 불리는 장치)를 장착하여 여러 개의 IP를 사용하는 형태
+
+
+	* 논리적 주소 체계
+		ㅁㄴㅇㄹ
+	
+	* 물리적 주소 체계
+		MAC (Media Access Control) 주소. MAC address는 LAN(Local Area Network) 또는 Ethernet 이라 불리는 망에서 통신을 하기 위하여 사용된다.
+
+	+ network id
+		Network의 범위를 지정하여 관리하기 쉽게 만들어 낸 것입니다
+	+ host ID
+		Host ID는 호스트들을 개별적으로 관리하기 위해 사용하게 된 것입니다
+따라서 우리가 인터넷을 사용할 때 Routing으로 목적지를 알아내고 찾아가는 등의 역할을 할 때에는 NetworkID와 HostID가 합쳐진 IP주소를 보게 됩니다.<br>
+
+IP Class의 경우 A, B, C, D, E Class로 나누어 Network ID와 Host ID를 구분하게 됩니다. <br>
+<img src ="https://2.bp.blogspot.com/-VWm-qwzH5I8/Vm0_vc2F4tI/AAAAAAAAAKE/ccxmdlSrwVQ/s640/IP%25EC%25A3%25BC%25EC%2586%258C%2B%25EC%25B2%25B4%25EA%25B3%2584.png">
+IP 주소에서 쓸  수 있는 숫자의 범위는 0~255로 되어 있기에 첫 번째 Octet에서 0~255까지의 숫자를 5개로 나누어서 A, B, C, D, E Class로 구분 되는 것입니다.
+
+    A Class : 0 ~ 127 (0.0.0.0 ~ 127.255.255.255)
+    B Class : 128 ~ 191 (128.0.0.0 ~ 191.255.255.255)
+    C Class : 192 ~ 223 (192.0.0.0 ~ 233.255.255.255)
+    D Class : 224 ~ 239 (224.0.0.0 ~ 239.255.255.255)
+    E Class : 240 ~ 255 (240.0.0.0. ~ 255.255.255.255)
+
+<a href = "http://korean-daeddo.blogspot.com/2015/12/ip.html">click link</a>
 3. putty vnc
 
 
@@ -55,6 +87,9 @@ bash: syntax error near unexpected token `('<br>
 $ python3 -c 'print (35/7)'<br>
 5.0<br>
 ```
+bash는 shell의 한 종류이다. shell은 os와 이야기할 때 쓰이는 cmd창 같은것이다. bashrc는 bash에서 처음 지정된 것을 모아놓은 것이다. 그러므로 이곳에서 환경변수 설정을 할 수 있다.<br>
+환경변수는 컴퓨터 shell창에서 컴퓨터가 모든 곳을 찾아보는 것은 비효율적이다. 그러므로 환경변수에 지정된 곳을 확인하라고 하는 것이다.<br>
+
 
 아직까지는 과정만 살펴보았고, 조금 헷갈린다.
 apt-key 설정 <br>
@@ -63,4 +98,4 @@ install ros  full로, <br>
 ros rosdep init??<br>
 환경 설정 echo "source /opt/ros/ ..... .... ..... bashrc<br>
 API 잘 이해가 안감. 모바일 앱 개발이 하드워어나 그런거 몰라도 API를 제공한다. Hardware는 통합되어 있음.
-
+kernel
